@@ -23,7 +23,7 @@ def read_args() -> argparse.ArgumentParser:
                         help='For "mode" eq "dir" it is an input images dir. '
                              'For "mode" eq "file" it is a path to input image. '
                              'For "mode" eq "url" it is a url to input image.')
-    parser.add_argument('-e', '--epochs', default=8, type=int,
+    parser.add_argument('-e', '--epochs', default=5, type=int,
                         help='Number of epochs')
     parser.add_argument('-s', '--style', default="images/styles", type=str,
                         help='For "mode" eq "dir" it is style images dir. '

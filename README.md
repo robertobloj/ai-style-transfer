@@ -86,3 +86,12 @@ optional arguments:
                         Variation weight
   -v, --verbose         True if verbose, false otherwise. Default value: False
 ```
+
+
+## TODO
+
+Remove warnings:
+
+```bash
+WARNING:tensorflow:Variable += will be deprecated. Use variable.assign_add if you want assignment to the variable value or 'x = x + y' if you want a new python Tensor object.
+```
