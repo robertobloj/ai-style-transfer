@@ -16,18 +16,18 @@ def read_args() -> argparse.ArgumentParser:
 
     parser.add_argument('-m', '--mode', type=str,
                         choices=["dir", "file", "url"], required=True,
-                        help='If "dir" mode, program uses input dir and style dir. '
-                             'If "file" mode, you can specify files instead of directories'
-                             'If "url" mode, you can specify urls for input and style images')
+                        help='If "dir" mode, program uses input dir and style dir.\n'
+                             'If "file" mode, you can specify files instead of directories.\n'
+                             'If "url" mode, you can specify urls for input and style images.')
     parser.add_argument('-i', '--input', default="images/input", type=str,
-                        help='For "mode" eq "dir" it is an input images dir. '
-                             'For "mode" eq "file" it is a path to input image. '
+                        help='For "mode" eq "dir" it is an input images dir.\n'
+                             'For "mode" eq "file" it is a path to input image.\n'
                              'For "mode" eq "url" it is a url to input image.')
     parser.add_argument('-e', '--epochs', default=5, type=int,
                         help='Number of epochs')
     parser.add_argument('-s', '--style', default="images/styles", type=str,
-                        help='For "mode" eq "dir" it is style images dir. '
-                             'For "mode" eq "file" it is a path to style image'
+                        help='For "mode" eq "dir" it is style images dir.\n'
+                             'For "mode" eq "file" it is a path to style image.\n'
                              'For "mode" eq "url" it is a url to style image.')
     parser.add_argument('-o', '--output-dir', default="images/output", type=str,
                         help='Output dir. Default value: "images/output"')
@@ -42,7 +42,7 @@ def read_args() -> argparse.ArgumentParser:
     parser.add_argument('--variation-weight', default=1e-4, type=float,
                         help='Variation weight')
     parser.add_argument('-v', '--verbose', action='count',
-                        help='True if verbose, false otherwise. Default value: False')
+                        help='Use flag for more detailed logs')
 
     if parser.parse_args().verbose:
         __logger.info("Input arguments: {}".format(parser.parse_args()))
