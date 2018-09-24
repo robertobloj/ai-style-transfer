@@ -21,7 +21,7 @@ For windows you should install [anaconda](https://www.anaconda.com/download/) in
 
 You can run *app.py* in one of the following modes:
 
-- *dir* - mode, where *app.py* uses *images/input/* dir and *images/styles/* dir 
+- *dir* - mode, where *app.py* by default uses *images/input/* dir and *images/styles/* dir 
 - *file* - mode, where you can specify files instead of directories
 - *url* - mode, where you can specify urls for input and style images. Those files *app.py* downloads from the internet.
 
@@ -36,6 +36,8 @@ Where:
 - *INPUT_IMG* - path to input image
 - *STYLE_IMG* - path to style image
 - *OUTPUT_DIR* - output directory, *app.py* will save input image converted through style image into output image
+
+## More options
 
 For more check help:
 
@@ -93,5 +95,6 @@ optional arguments:
 Remove warnings:
 
 ```bash
-WARNING:tensorflow:Variable += will be deprecated. Use variable.assign_add if you want assignment to the variable value or 'x = x + y' if you want a new python Tensor object.
+WARNING:tensorflow:Variable += will be deprecated. Use variable.assign_add if you want 
+assignment to the variable value or 'x = x + y' if you want a new python Tensor object.
 ```
