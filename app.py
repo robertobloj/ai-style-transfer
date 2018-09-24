@@ -8,7 +8,8 @@ from utils.logger_utils import setup_logging
 
 def main():
     setup_logging()
-    args = read_args()
+    parser = read_args()
+    args = parser.parse_args()
     logger = logging.getLogger("main")
 
     if args.mode == "dir":
@@ -41,7 +42,7 @@ def main():
         generate_image(input_file, style_file, args)
 
     else:
-        raise ValueError("Mode can be one of: ['dir', 'file', 'url'] !!!")
+        parser.print_help()
 
 
 if __name__ == "__main__":

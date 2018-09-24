@@ -1,7 +1,6 @@
 # AI style transfer
 
-AI style transfer is a simple project which shows 
-how to use artificial intelligence to changing image 
+Project shows how to use artificial intelligence to change image 
 style based on some pattern.
 
 ## Requirements
@@ -47,5 +46,43 @@ python app.py -h
 This command shows you more options:
 
 ```bash
-TODO
+usage: app.py [-h] -m {dir,file,url} [-i INPUT] [-e EPOCHS] [-s STYLE]
+              [-o OUTPUT_DIR] [-w WIDTH] [-f MAX_FUN]
+              [--input-weight INPUT_WEIGHT] [--style-weight STYLE_WEIGHT]
+              [--variation-weight VARIATION_WEIGHT] [-v]
+
+AI style transfer allows to transform input image(s) into output image(s) by
+using style image(s) as a pattern.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -m {dir,file,url}, --mode {dir,file,url}
+                        If "dir" mode, program uses input dir and style dir.
+                        If "file" mode, you can specify files instead of
+                        directoriesIf "url" mode, you can specify urls for
+                        input and style images
+  -i INPUT, --input INPUT
+                        For "mode" eq "dir" it is an input images dir. For
+                        "mode" eq "file" it is a path to input image. For
+                        "mode" eq "url" it is a url to input image.
+  -e EPOCHS, --epochs EPOCHS
+                        Number of epochs
+  -s STYLE, --style STYLE
+                        For "mode" eq "dir" it is style images dir. For "mode"
+                        eq "file" it is a path to style imageFor "mode" eq
+                        "url" it is a url to style image.
+  -o OUTPUT_DIR, --output-dir OUTPUT_DIR
+                        Output dir. Default value: "images/output"
+  -w WIDTH, --width WIDTH
+                        Output image width. Height will be calculated based on
+                        this value
+  -f MAX_FUN, --max-fun MAX_FUN
+                        Maximum number of function evaluations for optimizer
+  --input-weight INPUT_WEIGHT
+                        Input image weight
+  --style-weight STYLE_WEIGHT
+                        Style image weight
+  --variation-weight VARIATION_WEIGHT
+                        Variation weight
+  -v, --verbose         True if verbose, false otherwise. Default value: False
 ```

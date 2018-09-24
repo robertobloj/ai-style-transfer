@@ -4,7 +4,7 @@ import logging
 __logger = logging.getLogger(__name__)
 
 
-def read_args() -> argparse.Namespace:
+def read_args() -> argparse.ArgumentParser:
     """
     function defines input arguments
     :return: input arguments
@@ -14,7 +14,7 @@ def read_args() -> argparse.Namespace:
                                                  "as a pattern.",
                                      epilog="The End!")
 
-    parser.add_argument('-m', '--mode', default="all", type=str,
+    parser.add_argument('-m', '--mode', type=str,
                         choices=["dir", "file", "url"], required=True,
                         help='If "dir" mode, program uses input dir and style dir. '
                              'If "file" mode, you can specify files instead of directories'
@@ -23,7 +23,7 @@ def read_args() -> argparse.Namespace:
                         help='For "mode" eq "dir" it is an input images dir. '
                              'For "mode" eq "file" it is a path to input image. '
                              'For "mode" eq "url" it is a url to input image.')
-    parser.add_argument('-e', '--epochs', default=10, type=int,
+    parser.add_argument('-e', '--epochs', default=8, type=int,
                         help='Number of epochs')
     parser.add_argument('-s', '--style', default="images/styles", type=str,
                         help='For "mode" eq "dir" it is style images dir. '
@@ -39,12 +39,11 @@ def read_args() -> argparse.Namespace:
                         help='Input image weight')
     parser.add_argument('--style-weight', default=0.9, type=float,
                         help='Style image weight')
-    parser.add_argument('--style-weight', default=1e-4, type=float,
+    parser.add_argument('--variation-weight', default=1e-4, type=float,
                         help='Variation weight')
     parser.add_argument('-v', '--verbose', action='count',
                         help='True if verbose, false otherwise. Default value: False')
 
-    args = parser.parse_args()
-    if args.verbose:
-        __logger.info("Input arguments: {}".format(args))
-    return args
+    if parser.parse_args().verbose:
+        __logger.info("Input arguments: {}".format(parser.parse_args()))
+    return parser
