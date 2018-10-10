@@ -61,8 +61,8 @@ optional arguments:
   -m {dir,file,url}, --mode {dir,file,url}
                         If "dir" mode, program uses input dir and style dir.
                         If "file" mode, you can specify files instead of
-                        directoriesIf "url" mode, you can specify urls for
-                        input and style images
+                        directories. If "url" mode, you can specify urls for
+                        input and style images.
   -i INPUT, --input INPUT
                         For "mode" eq "dir" it is an input images dir. For
                         "mode" eq "file" it is a path to input image. For
@@ -71,7 +71,7 @@ optional arguments:
                         Number of epochs
   -s STYLE, --style STYLE
                         For "mode" eq "dir" it is style images dir. For "mode"
-                        eq "file" it is a path to style imageFor "mode" eq
+                        eq "file" it is a path to style image. For "mode" eq
                         "url" it is a url to style image.
   -o OUTPUT_DIR, --output-dir OUTPUT_DIR
                         Output dir. Default value: "images/output"
@@ -86,7 +86,7 @@ optional arguments:
                         Style image weight
   --variation-weight VARIATION_WEIGHT
                         Variation weight
-  -v, --verbose         True if verbose, false otherwise. Default value: False
+  -v, --verbose         Use flag for more detailed logs
 ```
 
 
